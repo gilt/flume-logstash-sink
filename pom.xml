@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>flume-logstash-sink</artifactId>
+    <groupId>com.gilt.flume</groupId>
+    <version>0.0.2-SNAPSHOT</version>
+    <name>Flume Elasticsearch Sink for Logstash v2</name>
+    <scm>
+        <connection>scm:git:ssh://github.com/gilt/flume-logstash-sink.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/gilt/flume-logstash-sink.git</developerConnection>
+        <url>https://github.com/gilt/flume-logstash-sink</url>
+        <tag>HEAD</tag>
+    </scm>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.1</version>
+                <configuration>
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                    <preparationGoals>clean verify</preparationGoals>
+                    <goals>deploy</goals>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.apache.flume.flume-ng-sinks</groupId>
+            <artifactId>flume-ng-elasticsearch-sink</artifactId>
+            <version>1.5.2</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.elasticsearch</groupId>
+            <artifactId>elasticsearch</artifactId>
+            <version>1.4.0</version>
+            <optional>true</optional>
+        </dependency>
+
+    </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>bintray</id>
+            <name>giltgroupe-maven</name>
+            <url>https://api.bintray.com/maven/giltgroupe/maven/com.gilt.flume/</url>
+        </repository>
+    </distributionManagement>
+</project>
