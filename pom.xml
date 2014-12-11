@@ -4,13 +4,13 @@
     <modelVersion>4.0.0</modelVersion>
     <artifactId>flume-logstash-sink</artifactId>
     <groupId>com.gilt.flume</groupId>
-    <version>0.0.1</version>
+    <version>0.0.2-SNAPSHOT</version>
     <name>Flume Elasticsearch Sink for Logstash v2</name>
     <scm>
         <connection>scm:git:ssh://github.com/gilt/flume-logstash-sink.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/gilt/flume-logstash-sink.git</developerConnection>
         <url>https://github.com/gilt/flume-logstash-sink</url>
-        <tag>v0.0.1</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <build>
